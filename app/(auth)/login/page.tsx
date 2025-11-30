@@ -66,8 +66,8 @@ export default function LoginPage() {
               🧠
             </motion.span>
           </Link>
-          <h1 className="text-3xl font-bold text-white mb-2">Welcome Back!</h1>
-          <p className="text-white/70">Let's continue your learning adventure</p>
+          <h1 className="text-3xl font-bold text-white mb-2 overflow-visible whitespace-normal break-words leading-tight">Welcome Back!</h1>
+          <p className="text-white/70 overflow-visible whitespace-normal break-words">Let's continue your learning adventure</p>
         </div>
 
         {/* Login Form */}

@@ -378,7 +378,7 @@ export const useAppState = create<AppState>()(
             id: profile.id,
             nickname: profile.nickname,
             gradeLevel: profile.grade_level,
-            avatarConfig: (profile.avatar_config as AvatarConfig) || state.user.avatarConfig,
+            avatarConfig: (profile.avatar_config as unknown as AvatarConfig) || state.user.avatarConfig,
             xp: profile.xp,
             level: profile.level,
             streakDays: profile.streak_days,

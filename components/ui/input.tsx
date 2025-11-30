@@ -19,11 +19,12 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
     const inputId = id || React.useId();
 
     return (
-      <div className="w-full">
+      <div className="w-full overflow-visible">
         {label && (
           <label
             htmlFor={inputId}
-            className="block text-base font-semibold text-deep-space mb-5 overflow-visible whitespace-normal leading-relaxed"
+            className="block text-base font-semibold text-deep-space mb-5 overflow-visible whitespace-normal leading-relaxed px-0"
+            style={{ paddingLeft: 0, paddingRight: 0, marginLeft: 0, marginRight: 0 }}
           >
             {label}
           </label>

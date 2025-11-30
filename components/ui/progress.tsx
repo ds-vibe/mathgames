@@ -43,18 +43,19 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
   const percentage = Math.min(Math.max((value / max) * 100, 0), 100);
 
   return (
-    <div className={cn("w-full", className)}>
+    <div className={cn("w-full overflow-visible", className)}>
       {showLabel && (
-        <div className="flex justify-between text-sm mb-2">
-          <span className="text-deep-space-lighter">Progress</span>
-          <span className="font-semibold text-deep-space">{Math.round(percentage)}%</span>
+        <div className="flex justify-between text-sm mb-3 px-1 overflow-visible">
+          <span className="text-deep-space-lighter overflow-visible">Progress</span>
+          <span className="font-semibold text-deep-space overflow-visible">{Math.round(percentage)}%</span>
         </div>
       )}
       <div
         className={cn(
-          "w-full bg-soft-gray rounded-full overflow-hidden",
+          "w-full bg-soft-gray rounded-full overflow-hidden mx-0",
           sizeStyles[size]
         )}
+        style={{ marginLeft: 0, marginRight: 0 }}
       >
         <motion.div
           className={cn("h-full rounded-full", colorStyles[color])}

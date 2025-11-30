@@ -171,18 +171,18 @@ export default function PracticePage() {
             <Section title="Choose Your Workout">
               <div className="grid md:grid-cols-2 gap-8">
                 {/* Quick Start */}
-                <Card interactive onClick={() => startSession("all", "adaptive")} gradient="cosmic">
-                  <div className="flex items-center gap-5">
+                <Card interactive onClick={() => startSession("all", "adaptive")} gradient="cosmic" padding="lg" overflow="visible">
+                  <div className="flex items-center gap-5 overflow-visible px-2">
                     <motion.div
-                      className="text-5xl"
+                      className="text-5xl flex-shrink-0"
                       animate={{ rotate: [0, 10, -10, 0] }}
                       transition={{ duration: 2, repeat: Infinity }}
                     >
                       ⚡
                     </motion.div>
-                    <div>
-                      <h3 className="text-xl font-bold text-white">Quick Practice</h3>
-                      <p className="text-white/80">5 mixed problems, adaptive difficulty</p>
+                    <div className="flex-1 min-w-[1px] overflow-visible">
+                      <h3 className="text-xl font-bold text-white mb-1 overflow-visible break-words">Quick Practice</h3>
+                      <p className="text-white/80 overflow-visible break-words">5 mixed problems, adaptive difficulty</p>
                     </div>
                   </div>
                 </Card>
@@ -413,18 +413,19 @@ export default function PracticePage() {
             animate={{ opacity: 1, scale: 1 }}
             className="text-center"
           >
-            <Card gradient="cosmic" className="max-w-lg mx-auto">
-              <motion.div
-                className="text-6xl mb-4"
-                animate={{ scale: [1, 1.2, 1], rotate: [0, 10, -10, 0] }}
-                transition={{ duration: 0.5 }}
-              >
-                🎉
-              </motion.div>
+            <Card gradient="cosmic" className="max-w-lg mx-auto overflow-visible" padding="xl">
+              <div className="overflow-visible px-4">
+                <motion.div
+                  className="text-6xl mb-6"
+                  animate={{ scale: [1, 1.2, 1], rotate: [0, 10, -10, 0] }}
+                  transition={{ duration: 0.5 }}
+                >
+                  🎉
+                </motion.div>
               
-              <h2 className="text-2xl font-bold text-white mb-2">Practice Complete!</h2>
-              
-              <div className="grid grid-cols-3 gap-4 my-6">
+                <h2 className="text-2xl font-bold text-white mb-3 overflow-visible break-words px-2">Practice Complete!</h2>
+                
+                <div className="grid grid-cols-3 gap-4 my-6 overflow-visible">
                 <div className="bg-white/20 rounded-xl p-4">
                   <div className="text-3xl font-bold text-white">
                     {answers.filter((a) => a.correct).length}/{answers.length}
@@ -443,23 +444,24 @@ export default function PracticePage() {
                   </div>
                   <div className="text-sm text-white/70">XP Earned</div>
                 </div>
-              </div>
+                </div>
 
-              <div className="flex gap-4 justify-center">
-                <Button
-                  variant="ghost"
-                  className="text-white border-white hover:bg-white/20"
-                  onClick={resetSession}
-                  leftIcon={<RotateCcw className="w-4 h-4" />}
-                >
-                  Practice Again
-                </Button>
-                <Button
-                  className="bg-white text-cosmic-purple hover:bg-white/90"
-                  onClick={resetSession}
-                >
-                  Done 🚀
-                </Button>
+                <div className="flex gap-4 justify-center mt-6 overflow-visible">
+                  <Button
+                    variant="ghost"
+                    className="text-white border-white hover:bg-white/20"
+                    onClick={resetSession}
+                    leftIcon={<RotateCcw className="w-4 h-4" />}
+                  >
+                    Practice Again
+                  </Button>
+                  <Button
+                    className="bg-white text-cosmic-purple hover:bg-white/90"
+                    onClick={resetSession}
+                  >
+                    Done 🚀
+                  </Button>
+                </div>
               </div>
             </Card>
           </motion.div>

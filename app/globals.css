@@ -623,25 +623,41 @@ label {
    Component Overrides for Elegance
    ======================================== */
 
-/* Prevent clipping globally - NO CLIPPING ALLOWED */
-button, .btn, input, textarea, select, label, .card, [class*="card"], 
-h1, h2, h3, h4, h5, h6, p, span, div {
+/* Prevent clipping globally - NO CLIPPING ALLOWED for text elements */
+button, .btn, input, textarea, select, label, 
+h1, h2, h3, h4, h5, h6, p, span, a {
   overflow: visible !important;
 }
 
 /* Ensure text never clips */
-button, .btn {
+button, .btn, h1, h2, h3, h4, h5, h6, p, span, label {
   white-space: normal !important;
   word-wrap: break-word !important;
   overflow-wrap: break-word !important;
+  text-overflow: clip !important;
 }
 
-/* Labels must never clip */
-label {
-  white-space: normal !important;
-  word-wrap: break-word !important;
-  overflow-wrap: break-word !important;
-  display: block !important;
+/* Cards default to visible unless explicitly set */
+.card, [class*="card"] {
+  overflow: visible !important;
+}
+
+/* Ensure all text containers allow overflow */
+div:has(> h1), div:has(> h2), div:has(> h3), div:has(> p), div:has(> label) {
+  overflow: visible !important;
+}
+
+/* But allow explicit overflow classes to work */
+.overflow-hidden, [class*="overflow-hidden"] {
+  overflow: hidden !important;
+}
+
+.overflow-auto, [class*="overflow-auto"] {
+  overflow: auto !important;
+}
+
+.overflow-scroll, [class*="overflow-scroll"] {
+  overflow: scroll !important;
 }
 
 /* Make buttons larger and more touchable */

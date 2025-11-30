@@ -60,14 +60,14 @@ export default function ProfilePage() {
         animate={{ opacity: 1, y: 0 }}
         className="mb-8"
       >
-        <Card gradient="cosmic" className="relative overflow-hidden">
+        <Card gradient="cosmic" className="relative overflow-visible" padding="xl">
           <motion.div
             className="absolute -right-20 -top-20 w-60 h-60 bg-white/10 rounded-full blur-3xl"
             animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.2, 0.1] }}
             transition={{ duration: 4, repeat: Infinity }}
           />
           
-          <div className="relative z-10 flex flex-col md:flex-row items-center gap-6">
+          <div className="relative z-10 flex flex-col md:flex-row items-center gap-6 overflow-visible px-2">
             {/* Avatar */}
             <div className="relative">
               <Avatar config={user.avatarConfig} size="2xl" />
@@ -80,9 +80,9 @@ export default function ProfilePage() {
             </div>
 
             {/* Info */}
-            <div className="flex-1 text-center md:text-left">
-              <div className="flex items-center justify-center md:justify-start gap-3 mb-2">
-                <h1 className="text-2xl md:text-3xl font-bold text-white">
+            <div className="flex-1 text-center md:text-left overflow-visible">
+              <div className="flex items-center justify-center md:justify-start gap-3 mb-3 flex-wrap overflow-visible">
+                <h1 className="text-2xl md:text-3xl font-bold text-white overflow-visible break-words px-2">
                   {user.nickname || "Explorer"}
                 </h1>
                 <StreakBadge days={user.streakDays} size="md" />

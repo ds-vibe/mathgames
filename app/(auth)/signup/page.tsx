@@ -108,10 +108,10 @@ export default function SignupPage() {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="w-full max-w-md"
+        className="w-full max-w-md overflow-visible"
       >
         {/* Header */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-8 overflow-visible">
           <Link href="/" className="inline-flex items-center gap-2 mb-4">
             <motion.span
               className="text-5xl"
@@ -121,10 +121,10 @@ export default function SignupPage() {
               🧠
             </motion.span>
           </Link>
-          <h1 className="text-3xl font-bold text-white mb-2">
+          <h1 className="text-3xl font-bold text-white mb-2 overflow-visible whitespace-normal break-words leading-tight">
             {stepTitles[step]}
           </h1>
-          <p className="text-white/70">{stepDescriptions[step]}</p>
+          <p className="text-white/70 overflow-visible whitespace-normal break-words">{stepDescriptions[step]}</p>
         </div>
 
         {/* Progress Steps */}

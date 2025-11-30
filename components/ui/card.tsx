@@ -1,10 +1,9 @@
 "use client";
 
 import * as React from "react";
-import { motion, HTMLMotionProps } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-export interface CardProps extends HTMLMotionProps<"div"> {
+export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   variant?: "elevated" | "flat" | "outlined" | "glass";
   interactive?: boolean;
   padding?: "none" | "sm" | "md" | "lg" | "xl" | "2xl";
@@ -73,25 +72,29 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
     // ALWAYS use overflow-visible to prevent clipping
     const effectiveOverflow = overflow ?? "visible";
 
+    const overflowValue: string = effectiveOverflow === "visible" ? "visible" : (effectiveOverflow || "visible");
+    
+    // Extract style separately to avoid MotionValueHelper type issues
+    const { style, ...restProps } = props;
+    
     return (
       <div
         ref={ref}
         className={cn(
           // Larger, friendlier radius
           "rounded-3xl",
-          overflowStyles[effectiveOverflow],
+          // ALWAYS use overflow-visible unless explicitly set to hidden/auto
+          overflowValue === "visible" ? "overflow-visible" : overflowStyles[overflowValue as keyof typeof overflowStyles],
           // Modern elevation system
           gradient === "none" && variantStyles[variant],
           gradient !== "none" && gradientStyles[gradient],
           paddingStyles[padding],
           interactive && "cursor-pointer",
-          // Prevent clipping
-          "overflow-visible",
           className
         )}
-        {...props}
+        {...restProps}
       >
-        {children}
+        {children as React.ReactNode}
       </div>
     );
   }

@@ -123,15 +123,17 @@ export default function GamePage() {
         <div className="max-w-5xl mx-auto px-6 py-12">
           {/* Game Header */}
           <Card className="p-10 mb-10 text-center" gradient="cosmic" overflow="visible">
-            <motion.div
-              className="text-8xl mb-6"
-              animate={{ scale: [1, 1.1, 1], rotate: [0, 5, -5, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              {gameConfig.icon}
-            </motion.div>
-            <h1 className="text-4xl font-bold text-white mb-3">{gameConfig.name}</h1>
-            <p className="text-white/90 text-lg max-w-md mx-auto leading-relaxed">{gameConfig.description}</p>
+            <div className="overflow-visible px-4">
+              <motion.div
+                className="text-8xl mb-6"
+                animate={{ scale: [1, 1.1, 1], rotate: [0, 5, -5, 0] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              >
+                {gameConfig.icon}
+              </motion.div>
+              <h1 className="text-4xl font-bold text-white mb-3 overflow-visible break-words px-2">{gameConfig.name}</h1>
+              <p className="text-white/90 text-lg max-w-md mx-auto leading-relaxed overflow-visible break-words px-2">{gameConfig.description}</p>
+            </div>
           </Card>
 
           {/* Game Info Grid */}
@@ -270,16 +272,17 @@ export default function GamePage() {
           animate={{ opacity: 1, scale: 1 }}
           className="w-full max-w-md"
         >
-          <Card gradient="cosmic" className="p-8 text-center">
-            <motion.div
-              className="text-6xl mb-4"
-              animate={{ scale: [1, 1.2, 1] }}
-              transition={{ duration: 0.5 }}
-            >
-              {stars >= 3 ? "🌟" : stars >= 2 ? "⭐" : "✨"}
-            </motion.div>
-            
-            <h2 className="text-2xl font-bold text-white mb-2">Game Complete!</h2>
+          <Card gradient="cosmic" className="p-8 text-center overflow-visible">
+            <div className="overflow-visible px-4">
+              <motion.div
+                className="text-6xl mb-4"
+                animate={{ scale: [1, 1.2, 1] }}
+                transition={{ duration: 0.5 }}
+              >
+                {stars >= 3 ? "🌟" : stars >= 2 ? "⭐" : "✨"}
+              </motion.div>
+              
+              <h2 className="text-2xl font-bold text-white mb-2 overflow-visible break-words px-2">Game Complete!</h2>
             
             {/* Stars */}
             <div className="flex justify-center gap-2 mb-6">
@@ -341,6 +344,7 @@ export default function GamePage() {
               >
                 Play Again
               </Button>
+            </div>
             </div>
           </Card>
         </motion.div>

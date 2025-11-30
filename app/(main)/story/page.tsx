@@ -78,27 +78,27 @@ export default function StoryPage() {
       {currentEpisode && (
         <Section title="Continue Your Adventure">
           <Link href={`/story/${currentEpisode}`}>
-            <Card interactive gradient="cosmic" className="relative overflow-hidden">
+            <Card interactive gradient="cosmic" className="relative overflow-visible" padding="lg">
               <motion.div
                 className="absolute -right-10 -top-10 w-40 h-40 bg-white/10 rounded-full blur-3xl"
                 animate={{ scale: [1, 1.2, 1] }}
                 transition={{ duration: 3, repeat: Infinity }}
               />
-              <div className="relative z-10 flex items-center gap-6">
+              <div className="relative z-10 flex items-center gap-6 overflow-visible px-2">
                 <motion.div
-                  className="text-7xl"
+                  className="text-7xl flex-shrink-0"
                   animate={{ rotate: [0, 5, -5, 0] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 >
                   {episodes.find(e => e.id === currentEpisode)?.thumbnail}
                 </motion.div>
-                <div className="flex-1">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="px-2 py-0.5 bg-white/20 rounded-full text-xs font-medium">
+                <div className="flex-1 min-w-[1px] overflow-visible">
+                  <div className="flex items-center gap-2 mb-2 flex-wrap overflow-visible">
+                    <span className="px-2 py-0.5 bg-white/20 rounded-full text-xs font-medium overflow-visible">
                       Episode {episodes.findIndex(e => e.id === currentEpisode) + 1}
                     </span>
                   </div>
-                  <h2 className="text-2xl font-bold text-white mb-1">
+                  <h2 className="text-2xl font-bold text-white mb-2 overflow-visible break-words px-2">
                     {episodes.find(e => e.id === currentEpisode)?.title}
                   </h2>
                   <p className="text-white/80 mb-3">

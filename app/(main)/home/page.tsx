@@ -189,16 +189,18 @@ export default function HomePage() {
                   <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="mt-6 p-5 bg-gradient-cosmic rounded-2xl text-white text-center"
+                    className="mt-6 p-6 bg-gradient-cosmic rounded-2xl text-white text-center overflow-visible"
                   >
-                    <p className="font-bold text-xl mb-2">🎉 All challenges complete!</p>
-                    <p className="text-base opacity-90 mb-4">You earned a bonus reward!</p>
-                    <Button
-                      size="lg"
-                      className="bg-white text-cosmic-purple hover:bg-white/90 shadow-lg"
-                    >
-                      Claim +50 XP ✨
-                    </Button>
+                    <div className="overflow-visible px-4">
+                      <p className="font-bold text-xl mb-3 overflow-visible break-words px-2">🎉 All challenges complete!</p>
+                      <p className="text-base opacity-90 mb-5 overflow-visible break-words px-2">You earned a bonus reward!</p>
+                      <Button
+                        size="lg"
+                        className="bg-white text-cosmic-purple hover:bg-white/90 shadow-lg"
+                      >
+                        Claim +50 XP ✨
+                      </Button>
+                    </div>
                   </motion.div>
                 )}
               </Card>
@@ -311,18 +313,18 @@ export default function HomePage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2 }}
             >
-              <Card gradient="cosmic" padding="xl">
-                <div className="text-center text-white">
+              <Card gradient="cosmic" padding="xl" overflow="visible">
+                <div className="text-center text-white overflow-visible px-2">
                   <motion.div
-                    className="text-6xl mb-4"
+                    className="text-6xl mb-6"
                     animate={{ scale: [1, 1.1, 1] }}
                     transition={{ duration: 2, repeat: Infinity }}
                   >
                     🏆
                   </motion.div>
-                  <h3 className="text-2xl font-bold font-display mb-1">{levelInfo.title}</h3>
-                  <p className="text-white/80 mb-5">Level {levelInfo.level}</p>
-                  <div className="bg-white/20 rounded-full h-4 overflow-hidden mb-3">
+                  <h3 className="text-2xl font-bold font-display mb-2 px-4 overflow-visible break-words">{levelInfo.title}</h3>
+                  <p className="text-white/80 mb-6">Level {levelInfo.level}</p>
+                  <div className="bg-white/20 rounded-full h-4 mb-4 mx-2 overflow-hidden">
                     <motion.div
                       className="h-full bg-sunny-yellow rounded-full"
                       initial={{ width: 0 }}
@@ -330,7 +332,7 @@ export default function HomePage() {
                       transition={{ duration: 1, delay: 0.5 }}
                     />
                   </div>
-                  <p className="text-sm text-white/70">
+                  <p className="text-sm text-white/70 px-2 pb-2 overflow-visible break-words">
                     {(levelInfo.xpForNext - user.xp % levelInfo.xpForNext).toLocaleString()} XP to next level
                   </p>
                 </div>

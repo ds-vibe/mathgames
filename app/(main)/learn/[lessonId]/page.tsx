@@ -359,17 +359,18 @@ export default function LessonPage() {
               animate={{ opacity: 1, scale: 1 }}
               className="text-center"
             >
-              <Card gradient="cosmic" className="p-8">
-                <motion.div
-                  className="text-8xl mb-4"
-                  animate={{ scale: [1, 1.2, 1], rotate: [0, 10, -10, 0] }}
-                  transition={{ duration: 0.5 }}
-                >
-                  🎉
-                </motion.div>
-                
-                <h2 className="text-3xl font-bold text-white mb-2">Lesson Complete!</h2>
-                <p className="text-white/80 mb-6">{lesson.title}</p>
+              <Card gradient="cosmic" className="p-8 overflow-visible" padding="xl">
+                <div className="overflow-visible px-4">
+                  <motion.div
+                    className="text-8xl mb-6"
+                    animate={{ scale: [1, 1.2, 1], rotate: [0, 10, -10, 0] }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    🎉
+                  </motion.div>
+                  
+                  <h2 className="text-3xl font-bold text-white mb-3 overflow-visible break-words px-2">Lesson Complete!</h2>
+                  <p className="text-white/80 mb-6 overflow-visible break-words px-2">{lesson.title}</p>
 
                 <div className="bg-white/20 rounded-xl p-4 mb-6">
                   <div className="grid grid-cols-2 gap-4">
@@ -424,6 +425,7 @@ export default function LessonPage() {
                   >
                     Practice Again
                   </Button>
+                </div>
                 </div>
               </Card>
             </motion.div>

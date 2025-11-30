@@ -124,9 +124,9 @@ export default function ReadPage() {
             >
               📚
             </motion.div>
-            <div className="flex-1">
-              <h3 className="text-xl font-bold mb-1">Weekly Reading Challenge</h3>
-              <p className="opacity-80 mb-2">
+            <div className="flex-1 min-w-[1px] overflow-visible">
+              <h3 className="text-xl font-bold mb-2 overflow-visible break-words px-2">Weekly Reading Challenge</h3>
+              <p className="opacity-80 mb-2 overflow-visible break-words px-2">
                 Read all {totalAvailable} passages to become a Reading Champion!
               </p>
               <div className="flex items-center gap-2">

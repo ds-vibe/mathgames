@@ -16,7 +16,7 @@ interface GameInfo {
   name: string;
   icon: string;
   subject: "math" | "science";
-  grades: number[];
+  grades: readonly number[] | number[];
   description: string;
   levels: number;
   completedLevels: number;

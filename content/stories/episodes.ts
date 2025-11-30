@@ -435,6 +435,7 @@ export const episodes: Episode[] = [
       {
         id: "s2",
         background: "kitchen",
+        dialogue: [],
         problem: {
           question: "If we cut the pizza into 4 equal pieces and you take 1, what fraction do you have?",
           options: ["1/2", "1/3", "1/4", "1/5"],
@@ -492,6 +493,7 @@ export const episodes: Episode[] = [
       {
         id: "s2",
         background: "playground",
+        dialogue: [],
         problem: {
           question: "When Luna is at the TOP of the slide, what kind of energy does she have?",
           options: ["Sound energy", "Kinetic energy", "Potential energy", "Light energy"],
@@ -550,6 +552,7 @@ export const episodes: Episode[] = [
       {
         id: "s2",
         background: "lab",
+        dialogue: [],
         problem: {
           question: "Let's solve 23 × 4. What is 20 × 4?",
           options: ["60", "70", "80", "90"],
@@ -607,6 +610,7 @@ export const episodes: Episode[] = [
       {
         id: "s2",
         background: "lab-dark",
+        dialogue: [],
         problem: {
           question: "For electricity to flow, a circuit must be:",
           options: ["Open (broken)", "Closed (complete)", "Empty", "Backwards"],
